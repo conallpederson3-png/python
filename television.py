@@ -43,12 +43,13 @@ class Television:
             if self.__volume < self.MAX_VOLUME:
                 self.__volume += 1
 
-    def volume_down(self):
+    def volume_down(self) -> None:
+        """Decrease the volume when the television is on."""
         if self.__status:
             if self.__muted:
                 self.__muted = False
 
-            if self.__volume > self.MAX_VOLUME:
+            if self.__volume > self.MIN_VOLUME:
                 self.__volume -= 1
 
     def __str__(self):
